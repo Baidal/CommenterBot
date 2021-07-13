@@ -1,0 +1,24 @@
+{
+  "name": "commenter-bot",
+  "version": "1.0.0",
+  "description": "This bot allows you to comment automatically on a Instagram image, using your follows as a data.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": ""
+  },
+  "keywords": [
+    "bot",
+    "instagram",
+    "lottery"
+  ],
+  "author": "Luis Vidal Rico",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "delay": "^5.0.0",
+    "dotenv": "^10.0.0",
+    "instagram-web-api": "^2.2.2",
+    "prompt-sync": "^4.2.0"
+  }
+}
