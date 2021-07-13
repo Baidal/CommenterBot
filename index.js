@@ -10,6 +10,9 @@ async function main(){
     const url = process.env.URL || prompt('Introduce el link de la imagen a comentar: ')
     //Numero de comentarios que queremos realizar
     const followingNumber = process.env.FOLLOWING_NUMBER || prompt('Introduce el numero de comentarios que deseas realizar(máximo 75): ')
+    //Numero de comentarios maximos a realizar
+    const maxComments = process.env.MAX_COMMENTS || 75
+
 
     //Credenciales
     const username = process.env.IG_USERNAME
@@ -51,7 +54,7 @@ async function main(){
         //Obtenemos los datos de la gente a la que seguimos
         const followings = await instagramClient.getFollowings({userId: user.userId, first: followingNumber})
         
-        for(let i = 0; i < i < followings.data.length && i < followingNumber; i++){
+        for(let i = 0; i < i < followings.data.length && i < followingNumber && i < maxComments; i++){
             console.log("Añadiendo el comentario @" + followings.data[i].username + "...")
 
             await instagramClient.addComment({mediaId: media_id, text: '@' + followings.data[i].username})
